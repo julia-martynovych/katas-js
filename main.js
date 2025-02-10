@@ -48,3 +48,19 @@
 // }
 // // console.log(Math.floor(Math.random() * 6) + 1);
 // console.log(dice())
+
+
+//
+function multipliers(num) {
+  const arrayOp = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  console.log(`La tabla del numero ${num} es:`)
+  arrayOp.forEach((arrayValue) => {
+    console.log(`${num} x ${arrayValue} = ` + num * arrayValue)
+  });
+};
+
+const num = prompt("Introduce el numero a sacar la tabla:");
+console.log("_________________________________");
+
+multipliers(num);
+
