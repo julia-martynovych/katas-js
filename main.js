@@ -106,8 +106,9 @@
 
 const planetaTierra = {
   kmDelSol: 150000000,
-  composiciónAtmosférica: "nitrógeno, oxígeno, argón",
+  composiciónAtmosférica: ["Nitrogeno", "Oxigeno", "Aragon"],
 };
+
 console.log(`Hola, soy planeta Tierra!`);
 console.log(planetaTierra)
 
@@ -118,6 +119,20 @@ console.log(planetaTierra)
 delete planetaTierra.habitado;
 console.log(planetaTierra)
 
+// const planetaTierra = {
+//   kmDelSol: 150000000,
+
+//   neighbor: {
+//     delante: "Venus",
+//     detras: "Marte",
+//   },
+
+//   compostion: ["Nitrogeno", "Oxigeno", "Aragon"],
+  
+//   greet: function () {
+//     console.log("Hola, soy planeta Tierra")
+//   },
+// }
 // 6. Basándote en la especificaciones del objeto anterior crea la clase planeta
 // y haz instancias de, al menos dos planetas, más abajo te especifico las
 // propiedades: 🪐🐱🚀
@@ -133,7 +148,8 @@ class Planeta {
   }
 }
 
-let marte = new Planeta("Marte", 227900000, "Tierra, Júpiter", "None")
-let tierra = new Planeta("Tierra", 150000000, "Marte, Venus", "Hola, mundo")
+let marte = new Planeta("Marte", 227900000, "Tierra, Júpiter", "Deimos, Fobos", "None")
+let tierra = new Planeta("Tierra", 150000000, "Marte, Venus", "Luna", "Hola, mundo")
 
-
+console.log(tierra.kmDelSol)
+console.log(marte.planetasVecionos)
