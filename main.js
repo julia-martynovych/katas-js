@@ -64,32 +64,76 @@
 
 // multipliers(num);
 
-function multiplicationTable(num){
-  for (let i = 1; i < 10; i++){
-  console.log(`${num} x ${i} = ${num*i}`)
-}
-}
+// function multiplicationTable(num){
+//   for (let i = 1; i < 10; i++){
+//   console.log(`${num} x ${i} = ${num*i}`)
+// }
+// }
 
 
-// Crea una funcion que sea un contador de las ovejas que están dormidas
+// // 4. Crea una funcion que sea un contador de las ovejas que están dormidas
 
-const sleepSheep = [true, true, true, false,
-  true, true, true, true,
-  true, false, true, false,
-  true, false, false, true,
-  true, true, true, true,
-  false, false, true, true, false]
+// const sleepSheep = [true, true, true, false,
+//   true, true, true, true,
+//   true, false, true, false,
+//   true, false, false, true,
+//   true, true, true, true,
+//   false, false, true, true, false]
 
-function sheepCounter(num) {
-  let count = 0;
-  sleepSheep.forEach(element => {
-    if (element === true) {
-      count++;
-    }
-  });
-  return count
-}
-  console.log(sheepCounter()); 
+// function sheepCounter(num) {
+//   let count = 0;
+//   sleepSheep.forEach(element => {
+//     if (element === true) {
+//       count++;
+//     }
+//   });
+//   return count
+// }
+//   console.log(sheepCounter()); 
 
 
 // console.log(`hola!`)
+
+// 5. Crea un objeto planeta tierra, que tenga las siguientes propiedades: su
+// distancia del sol,  sus vecinos (especificando que planeta tiene delante y
+// cuál detrás), una lista de su composición atmosférica, y que también
+// tenga un método saludar que devuelva en consola Hola soy el planeta
+// tierra 🌍
+
+// más tarde añade con código la propiedad satélite y dale el valor de
+// luna, también añade la propiedad planeta habitado con el valor true, y
+// posteriormente eliminalo.
+
+const planetaTierra = {
+  kmDelSol: 150000000,
+  composiciónAtmosférica: "nitrógeno, oxígeno, argón",
+};
+console.log(`Hola, soy planeta Tierra!`);
+console.log(planetaTierra)
+
+planetaTierra.satélite = "luna";
+planetaTierra.habitado = true;
+console.log(planetaTierra)
+
+delete planetaTierra.habitado;
+console.log(planetaTierra)
+
+// 6. Basándote en la especificaciones del objeto anterior crea la clase planeta
+// y haz instancias de, al menos dos planetas, más abajo te especifico las
+// propiedades: 🪐🐱🚀
+// nombre del planeta, km del sol, planetas vecinos, satélites, método saludar
+
+class Planeta {
+  constructor(nombreDelPlaneta, kmDelSol, planetasVecinos, satélites, métodoSaludar) {
+    this.nombreDelPlaneta = nombreDelPlaneta;
+    this.kmDelSol = kmDelSol;
+    this.planetasVecionos = planetasVecinos;
+    this.satélites = satélites;
+    this.métodoSaludar = métodoSaludar;
+  }
+}
+
+let marte = new Planeta("Marte", 227900000, "Tierra, Júpiter", "None")
+let tierra = new Planeta("Tierra", 150000000, "Marte, Venus", "Hola, mundo")
+
+
