@@ -71,9 +71,25 @@ function multiplicationTable(num){
 }
 
 
-// Crea una funcion que sea un contador de las ovejas que están 
+// Crea una funcion que sea un contador de las ovejas que están dormidas
 
+const sleepSheep = [true, true, true, false,
+  true, true, true, true,
+  true, false, true, false,
+  true, false, false, true,
+  true, true, true, true,
+  false, false, true, true, false]
 
+function sheepCounter(num) {
+  let count = 0;
+  sleepSheep.forEach(element => {
+    if (element === true) {
+      count++;
+    }
+  });
+  return count
+}
+  console.log(sheepCounter()); 
 
 
 // console.log(`hola!`)
