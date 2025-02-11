@@ -51,16 +51,29 @@
 
 
 //
-function multipliers(num) {
-  const arrayOp = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  console.log(`La tabla del numero ${num} es:`)
-  arrayOp.forEach((arrayValue) => {
-    console.log(`${num} x ${arrayValue} = ` + num * arrayValue)
-  });
-};
+// function multipliers(num) {
+//   const arrayOp = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//   console.log(`La tabla del numero ${num} es:`)
+//   arrayOp.forEach((arrayValue) => {
+//     console.log(`${num} x ${arrayValue} = ` + num * arrayValue)
+//   });
+// };
 
-const num = prompt("Introduce el numero a sacar la tabla:");
-console.log("_________________________________");
+// const num = prompt("Introduce el numero a sacar la tabla:");
+// console.log("_________________________________");
 
-multipliers(num);
+// multipliers(num);
 
+function multiplicationTable(num){
+  for (let i = 1; i < 10; i++){
+  console.log(`${num} x ${i} = ${num*i}`)
+}
+}
+
+
+// Crea una funcion que sea un contador de las ovejas que están 
+
+
+
+
+// console.log(`hola!`)
