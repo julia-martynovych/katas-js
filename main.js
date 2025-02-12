@@ -138,18 +138,40 @@ console.log(planetaTierra)
 // propiedades: 🪐🐱🚀
 // nombre del planeta, km del sol, planetas vecinos, satélites, método saludar
 
-class Planeta {
-  constructor(nombreDelPlaneta, kmDelSol, planetasVecinos, satélites, métodoSaludar) {
-    this.nombreDelPlaneta = nombreDelPlaneta;
-    this.kmDelSol = kmDelSol;
-    this.planetasVecionos = planetasVecinos;
-    this.satélites = satélites;
-    this.métodoSaludar = métodoSaludar;
+// class Planeta {
+//   constructor(nombreDelPlaneta, kmDelSol, planetasVecinos, satélites, métodoSaludar) {
+//     this.nombreDelPlaneta = nombreDelPlaneta;
+//     this.kmDelSol = kmDelSol;
+//     this.planetasVecionos = planetasVecinos;
+//     this.satélites = satélites;
+//     this.métodoSaludar = métodoSaludar;
+//   }
+// }
+
+// let marte = new Planeta("Marte", 227900000, "Tierra, Júpiter", "Deimos, Fobos", "None")
+// let tierra = new Planeta("Tierra", 150000000, "Marte, Venus", "Luna", "Hola, mundo")
+
+// console.log(tierra.kmDelSol)
+// console.log(marte.planetasVecionos)
+
+class Animal {
+  constructor(nombre, especie) {
+    this.nombre = nombre;
+    this.especie = especie;
+  }
+  mostrarInfo() {
+    console.log(`Nombre: ${this.nombre}. Especie: ${this.especie}`)
   }
 }
+  class Perro extends Animal {
+    constructor(nombre, raza) {
+      super(this.nombre, "Perro")
+      this.raza = raza;
+      this.vacunas = [];
+    }
+    agregarVacuna(vacuna) {
+      this.vacunas.push(vacuna)
+      console.log(`${vacuna} añadida para ${this.nombre}`)
+    }
+  }
 
-let marte = new Planeta("Marte", 227900000, "Tierra, Júpiter", "Deimos, Fobos", "None")
-let tierra = new Planeta("Tierra", 150000000, "Marte, Venus", "Luna", "Hola, mundo")
-
-console.log(tierra.kmDelSol)
-console.log(marte.planetasVecionos)
