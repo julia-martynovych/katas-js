@@ -165,13 +165,19 @@ class Animal {
 }
   class Perro extends Animal {
     constructor(nombre, raza) {
-      super(this.nombre, "Perro")
+      super(nombre, "Perro")
       this.raza = raza;
       this.vacunas = [];
     }
+
     agregarVacuna(vacuna) {
       this.vacunas.push(vacuna)
       console.log(`${vacuna} añadida para ${this.nombre}`)
     }
   }
 
+const perro1 = new Perro("Paco", "Yorkshire")
+console.log(perro1)
+
+perro1.agregarVacuna('Rabia')
+console.log(perro1)
