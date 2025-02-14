@@ -104,20 +104,20 @@
 // luna, también añade la propiedad planeta habitado con el valor true, y
 // posteriormente eliminalo.
 
-const planetaTierra = {
-  kmDelSol: 150000000,
-  composiciónAtmosférica: ["Nitrogeno", "Oxigeno", "Aragon"],
-};
+// const planetaTierra = {
+//   kmDelSol: 150000000,
+//   composiciónAtmosférica: ["Nitrogeno", "Oxigeno", "Aragon"],
+// };
 
-console.log(`Hola, soy planeta Tierra!`);
-console.log(planetaTierra)
+// console.log(`Hola, soy planeta Tierra!`);
+// console.log(planetaTierra)
 
-planetaTierra.satélite = "luna";
-planetaTierra.habitado = true;
-console.log(planetaTierra)
+// planetaTierra.satélite = "luna";
+// planetaTierra.habitado = true;
+// console.log(planetaTierra)
 
-delete planetaTierra.habitado;
-console.log(planetaTierra)
+// delete planetaTierra.habitado;
+// console.log(planetaTierra)
 
 // const planetaTierra = {
 //   kmDelSol: 150000000,
@@ -154,30 +154,96 @@ console.log(planetaTierra)
 // console.log(tierra.kmDelSol)
 // console.log(marte.planetasVecionos)
 
-class Animal {
-  constructor(nombre, especie) {
+// class Animal {
+//   constructor(nombre, especie) {
+//     this.nombre = nombre;
+//     this.especie = especie;
+//   }
+//   mostrarInfo() {
+//     console.log(`Nombre: ${this.nombre}. Especie: ${this.especie}`)
+//   }
+// }
+//   class Perro extends Animal {
+//     constructor(nombre, raza) {
+//       super(nombre, "Perro")
+//       this.raza = raza;
+//       this.vacunas = [];
+//     }
+
+//     agregarVacuna(vacuna) {
+//       this.vacunas.push(vacuna)
+//       console.log(`${vacuna} añadida para ${this.nombre}`)
+//     }
+//   }
+
+// const perro1 = new Perro("Paco", "Yorkshire")
+// console.log(perro1)
+
+// perro1.agregarVacuna('Rabia')
+// console.log(perro1)
+
+
+
+
+
+
+// Clase Caballero que demuestra el principio de encapsulación
+class Caballero {
+    #durabilidadArmadura;  // Atributo privado usando # (característica moderna de JS)
+    constructor(durabilidadInicial, nombre) {
+        this.#durabilidadArmadura = durabilidadInicial;
+        this.nombre = nombre;
+    }
+
+    // Método público que permite recibir daño de manera controlada
+    recibirDaño(cantidadDaño) {
+        // Lógica interna que controla cómo se reduce la durabilidad
+      const dañoReal = Math.min(cantidadDaño, this.#durabilidadArmadura);
+      this.#durabilidadArmadura -= dañoReal;
+      return `${this.nombre} recibio ${dañoReal} puntos de daño. Durabilidad restante: ${this.#durabilidadArmadura}`;
+
+        
+    }
+
+    // Método público para consultar el estado de la armadura
+    consultarEstadoArmadura() {
+      return `La armadura de ${this.nombre} tiene ${this.#durabilidadArmadura}`;
+    }
+
+    // Método privado para reparar la armadura (solo usado internamente)
+    #repararArmadura(cantidad) {
+      this.#durabilidadArmadura += cantidad;
+      if (this.#durabilidadArmadura > 100) {
+        this.#durabilidadArmadura = 100;
+      }
+        }
+    
+
+    // Método público que usa el método privado de manera controlada
+    visitarHerrero() {
+      this.#repararArmadura(50);
+      return `El herrero ha reparado la armadura`
+    }
+}
+class Enemigo {
+  constructor(nombre, poderAtaque) {
     this.nombre = nombre;
-    this.especie = especie;
+    this.poderAtaque = poderAtaque; 
   }
-  mostrarInfo() {
-    console.log(`Nombre: ${this.nombre}. Especie: ${this.especie}`)
+  atacarCaballero(caballero) {
+    return caballero.recibirDaño(this.poderAtaque)
   }
 }
-  class Perro extends Animal {
-    constructor(nombre, raza) {
-      super(nombre, "Perro")
-      this.raza = raza;
-      this.vacunas = [];
-    }
+const caballero = new Caballero(100, "Sir Falo");
+const dragon = new Enemigo("Dragón Feroz", 30);
 
-    agregarVacuna(vacuna) {
-      this.vacunas.push(vacuna)
-      console.log(`${vacuna} añadida para ${this.nombre}`)
-    }
-  }
+// console.log(caballero.#durabilidadArmadura) - no se puede utilizar porque no está en la classe
 
-const perro1 = new Perro("Paco", "Yorkshire")
-console.log(perro1)
-
-perro1.agregarVacuna('Rabia')
-console.log(perro1)
+console.log(caballero.consultarEstadoArmadura());
+console.log(dragon.atacarCaballero(caballero));
+console.log(caballero.consultarEstadoArmadura());
+console.log(dragon.atacarCaballero(caballero));
+console.log(dragon.atacarCaballero(caballero));
+console.log(caballero.visitarHerrero());
+console.log(caballero.visitarHerrero());
+console.log(caballero.consultarEstadoArmadura());
